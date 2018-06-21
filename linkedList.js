@@ -28,6 +28,23 @@ class LinkedList {
     prevNode.next = new _Node(item, currNode);
     
   }
+
+  insertAfter(item,key){
+    let currNode = this.head;
+    let prevNode = this.head;
+
+    while(currNode.value !== key && currNode.next !== null){
+      prevNode = currNode;
+      currNode = currNode.next;
+    }
+
+    if (currNode.next === null){
+      console.log('Cannot find your key');
+    }
+
+    prevNode.next = new _Node(item, currNode.next);
+    
+  }
   
   insertLast(item){
     if(this.head === null){

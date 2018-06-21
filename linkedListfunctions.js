@@ -11,8 +11,13 @@ function main(){
   linkedList1.insertLast('Starbuck');
   linkedList1.insertLast('Tauhida');
   linkedList1.remove('squirrel');
-  console.log(linkedList1.insertBefore('111111','Husker'));
+  // console.log(linkedList1.insertBefore('111111','Husker'));
+  // console.log(loop(linkedList1));
+
+  console.log(linkedList1.insertAfter('111111','Apollo'));
   console.log(loop(linkedList1));
+
+
 }
 
 function loop(ll){
