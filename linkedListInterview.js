@@ -1,7 +1,9 @@
 'use strict';
 const list = require('./linkedListfunctions');
 const LinkedList = require('./linkedList');
+const DoubleLinkedList = require('./doubleLinkedList');
 const ll = new LinkedList();
+const doubleLinkedList = new DoubleLinkedList();
 
 function WhatDoesThisProgramDo(lst){
   let current = lst.head;
@@ -48,7 +50,7 @@ function reverseList(list){
 
   return JSON.stringify(list, null, 2);
 }
-console.log(JSON.stringify(list, null, 2));
+//console.log(JSON.stringify(list, null, 2));
 // console.log(reverseList(list));
 
 // function reverseListRecursive(list){
@@ -122,3 +124,23 @@ function cycleInList(list){
 }
 // console.log(cycleInList(ll));
 // console.log(cycleInList(list));
+function display(DLL){
+  let current = DLL.head;
+
+  while (current) {
+    console.log(current.value);
+    current = current.next;
+  }
+}
+
+function createDoublelyLinkedList(){
+
+
+  doubleLinkedList.insertFirst('A');
+  doubleLinkedList.insertFirst('B');
+  //doubleLinkedList.insertLast('newItem3');
+
+  display(doubleLinkedList);
+}
+
+createDoublelyLinkedList();
