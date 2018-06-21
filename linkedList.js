@@ -46,6 +46,18 @@ class LinkedList {
     
   }
   
+  insertAt(item, position){
+    let counter = 0; 
+    let currNode = this.head;
+    let prevNode = this.head;
+    while(counter !== position && currNode.next !== null){
+      counter++;
+      prevNode = currNode;
+      currNode = currNode.next;
+    }
+    prevNode.next = new _Node(item, currNode);
+  }
+
   insertLast(item){
     if(this.head === null){
       this.insertFirst(item);

@@ -14,7 +14,10 @@ function main(){
   // console.log(linkedList1.insertBefore('111111','Husker'));
   // console.log(loop(linkedList1));
 
-  console.log(linkedList1.insertAfter('111111','Apollo'));
+  // console.log(linkedList1.insertAfter('111111','Apollo'));
+  // console.log(loop(linkedList1));
+  
+  console.log(linkedList1.insertAt('111111', 3));
   console.log(loop(linkedList1));
 
 
