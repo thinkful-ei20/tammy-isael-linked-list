@@ -17,6 +17,19 @@ class LinkedList {
     this.head = new _Node(item, this.head);
   }
 
+  insertBefore(item,key){
+    let currNode = this.head;
+    let prevNode = this.head;
+    while(currNode.next !== key && currNode.next !== null){
+      prevNode = currNode;
+      currNode = currNode.next;
+      console.log('inside while', prevNode.value, currNode.value);
+    }
+    prevNode.next = new _Node(item, currNode);
+    currNode = currNode.next;
+    
+  }
+  
   insertLast(item){
     if(this.head === null){
       this.insertFirst(item);
@@ -69,3 +82,7 @@ class LinkedList {
   }
 }
 
+<<<<<<< HEAD
+=======
+module.exports = LinkedList;
+>>>>>>> 4dcab747e1cea474bef69bd845e5ae02cea81414
