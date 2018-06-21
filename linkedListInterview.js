@@ -89,4 +89,17 @@ function thirdFromTheEnd(list){
   return currentNode;
 }
 
-//console.log(thirdFromTheEnd(list));
+console.log(thirdFromTheEnd(list));
+
+function middleList(list){
+  let current = list.head;
+  let mid = list.head;
+
+  while(current.next !== null && current.next.next !== null){
+    current = current.next.next;
+    mid = mid.next;
+  }
+  return mid; //thanks jeffrey
+}
+
+console.log(middleList(list));
