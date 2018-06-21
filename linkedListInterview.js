@@ -1,5 +1,5 @@
 'use strict';
-
+const list = require('./linkedListfunctions');
 function WhatDoesThisProgramDo(lst){
   let current = lst.head;
   while(current !== null){
@@ -32,3 +32,17 @@ function WhatDoesThisProgramDo(lst){
 
 //O(n^2)
 //It is a loop within a loop, as the list grows the processing time increases by the size of the list
+
+
+function reverseList(list){
+  let current = list.head;
+  while(current.next !== null){
+    console.log(current.next.value);
+    list.remove(current.value);
+    list.insertFirst(current.value);
+    current = current.next;
+  }
+  return JSON.stringify(list, null, 2);
+}
+console.log(JSON.stringify(list, null, 2));
+console.log(reverseList(list));

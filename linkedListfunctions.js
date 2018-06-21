@@ -57,29 +57,39 @@ function findPrevious(ll, item){
     prevNode = currentNode;
     currentNode = currentNode.next;
   }
-  let counterMatchPrevious = counterOfItem - 1;
-
   
   let i = 0;
   currentNode = ll.head;
   prevNode = ll.head;
-  while ( i !== counterMatchPrevious && currentNode.next !== null){
+  while ( i !== counterOfItem - 1 && currentNode.next !== null){
     i++;
     prevNode = currentNode;
     currentNode = currentNode.next;
   }
 
-  return prevNode;
+  return prevNode.value;
 }
 
-// findPrevious: finds the node before the item you are looking for
 // findLast: returns the last node in the linked list
+function findLast(ll){
+  let currentNode = ll.head;
+  let prevNode = ll.head;
 
+  while(currentNode.next !== null){
+    prevNode = currentNode;
+    currentNode = currentNode.next;
+  }
+
+  return currentNode;
+}
 
 
 let list = main();
-console.log(display(list));
+// console.log(display(list));
 // console.log(size(list));
 // console.log(isEmpty(list));
 // console.log(isEmpty({head: null}));
-console.log(findPrevious(list, 'hotdog'));
+// console.log(findPrevious(list, 'hotdog'));
+console.log(findLast(list));
+
+module.exports = list;
