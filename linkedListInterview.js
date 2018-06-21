@@ -136,8 +136,11 @@ function display(DLL){
 function createDoublelyLinkedList(){
 
 
-  doubleLinkedList.insertFirst('A');
-  doubleLinkedList.insertFirst('B');
+  doubleLinkedList.insertLast('A');
+  doubleLinkedList.insertLast('B');
+  doubleLinkedList.insertLast('C');
+  doubleLinkedList.insertLast('D');
+
   //doubleLinkedList.insertLast('newItem3');
 
   display(doubleLinkedList);

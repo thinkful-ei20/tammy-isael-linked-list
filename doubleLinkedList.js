@@ -32,14 +32,18 @@ class DoubleLinkedList {
   }
 
   insertLast(item){
-    let prev = this.head;
-    let current = this.head;
-    while(current !== null){
-      prev = current;
-      current = current.next;
+    if (!this.head){
+      this.insertFirst(item);
+    } else{
+      let current = this.head;
+      while(current.next !== null){
+        current = current.next;
+      }
+      const newNode = new _Node(item, null, current);
+      current.next = newNode;
+      this.tail = newNode;
+      this.length++;
     }
-
-    this.tail = new _Node(item, null, prev);
   }
 
 
