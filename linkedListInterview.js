@@ -1,6 +1,7 @@
 'use strict';
 const list = require('./linkedListfunctions');
-
+const LinkedList = require('./linkedList');
+const ll = new LinkedList();
 
 function WhatDoesThisProgramDo(lst){
   let current = lst.head;
@@ -89,7 +90,7 @@ function thirdFromTheEnd(list){
   return currentNode;
 }
 
-console.log(thirdFromTheEnd(list));
+// console.log(thirdFromTheEnd(list));
 
 function middleList(list){
   let current = list.head;
@@ -102,4 +103,22 @@ function middleList(list){
   return mid; //thanks jeffrey
 }
 
-console.log(middleList(list));
+// console.log(middleList(list));
+
+function cycleInList(list){
+  ll.insertFirst('hello');
+  ll.insertLast('hello2');
+  ll.find('hello2').next = list.head;
+  let fast = list.head.next;
+  let slow = list.head;
+  while(fast != null && slow != null){
+    if(fast == slow) {
+      return true;
+    }
+    fast = fast.next.next;
+    slow = slow.next;
+  }
+  return false;
+}
+// console.log(cycleInList(ll));
+// console.log(cycleInList(list));
