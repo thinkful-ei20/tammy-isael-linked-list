@@ -38,8 +38,8 @@ function size(ll){
   let counter = 1;
   let currentNode = ll.head;
   while(currentNode.next !== null){
-      currentNode = currentNode.next;
-      counter++
+    currentNode = currentNode.next;
+    counter++;
   }
   return counter;
 }
@@ -48,10 +48,38 @@ function isEmpty(ll){
   return ll.head === null;
 }
 
+function findPrevious(ll, item){
+  let counterOfItem=0;
+  let currentNode = ll.head;
+  let prevNode = ll.head;
+  while (currentNode.value !== item && currentNode.next !== null){
+    counterOfItem++;
+    prevNode = currentNode;
+    currentNode = currentNode.next;
+  }
+  let counterMatchPrevious = counterOfItem - 1;
+
+  
+  let i = 0;
+  currentNode = ll.head;
+  prevNode = ll.head;
+  while ( i !== counterMatchPrevious && currentNode.next !== null){
+    i++;
+    prevNode = currentNode;
+    currentNode = currentNode.next;
+  }
+
+  return prevNode;
+}
+
+// findPrevious: finds the node before the item you are looking for
+// findLast: returns the last node in the linked list
+
 
 
 let list = main();
 console.log(display(list));
-console.log(size(list));
-console.log(isEmpty(list));
-console.log(isEmpty({head: null}));
+// console.log(size(list));
+// console.log(isEmpty(list));
+// console.log(isEmpty({head: null}));
+console.log(findPrevious(list, 'hotdog'));
