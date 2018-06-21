@@ -17,7 +17,9 @@ function main(){
   linkedList1.insertAt('Kat', 2);
   linkedList1.remove('Tauhida');
 
-  return display(linkedList1);
+  // console.log(size(linkedList1));
+  // return display(linkedList1);
+  return linkedList1;
 
 }
 
@@ -32,4 +34,24 @@ function display(ll){
   return JSON.stringify(ll, null, 2);
 }
 
-console.log(main());
+function size(ll){
+  let counter = 1;
+  let currentNode = ll.head;
+  while(currentNode.next !== null){
+      currentNode = currentNode.next;
+      counter++
+  }
+  return counter;
+}
+
+function isEmpty(ll){
+  return ll.head === null;
+}
+
+
+
+let list = main();
+console.log(display(list));
+console.log(size(list));
+console.log(isEmpty(list));
+console.log(isEmpty({head: null}));
