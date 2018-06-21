@@ -31,20 +31,19 @@ class LinkedList {
 
   insertAfter(item,key){
     let currNode = this.head;
-    let prevNode = this.head;
 
     while(currNode.value !== key && currNode.next !== null){
-      prevNode = currNode;
       currNode = currNode.next;
     }
 
     if (currNode.next === null){
-      console.log('Cannot find your key');
+      //console.log('Cannot find your key');
     }
 
-    prevNode.next = new _Node(item, currNode.next);
+    currNode.next = new _Node(item, currNode.next.next);
     
   }
+
   
   insertAt(item, position){
     let counter = 0; 

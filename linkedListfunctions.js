@@ -11,25 +11,25 @@ function main(){
   linkedList1.insertLast('Starbuck');
   linkedList1.insertLast('Tauhida');
   linkedList1.remove('squirrel');
-  // console.log(linkedList1.insertBefore('111111','Husker'));
-  // console.log(loop(linkedList1));
-
-  // console.log(linkedList1.insertAfter('111111','Apollo'));
-  // console.log(loop(linkedList1));
   
-  console.log(linkedList1.insertAt('111111', 3));
-  console.log(loop(linkedList1));
+  linkedList1.insertBefore('Athena', 'Boomer');
+  linkedList1.insertAfter('Hotdog', 'Helo');
+  linkedList1.insertAt('Kat', 2);
+  linkedList1.remove('Tauhida');
 
+  return display(linkedList1);
 
 }
 
-function loop(ll){
-  let currentNode = ll.head;
-  while(currentNode.next !== null){
-    console.log(currentNode.value);
-    currentNode = currentNode.next;
-  }
-  console.log(currentNode.value);
+function display(ll){
+  // let currentNode = ll.head;
+  // while(currentNode.next !== null){
+  //   console.log(currentNode.value);
+  //   currentNode = currentNode.next;
+  // }
+  // console.log(currentNode.value);
+
+  return JSON.stringify(ll, null, 2);
 }
 
 console.log(main());
