@@ -12,7 +12,6 @@ function main(){
   linkedList1.insertLast('Tauhida');
   linkedList1.remove('squirrel');
   console.log(linkedList1.insertBefore('111111','Husker'));
-  // console.log(linkedList1.find('111111'));
   console.log(loop(linkedList1));
 }
 
