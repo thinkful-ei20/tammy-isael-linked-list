@@ -36,20 +36,19 @@ function WhatDoesThisProgramDo(lst){
 //It is a loop within a loop, as the list grows the processing time increases by the size of the list
 
 
-// function reverseList(list){
-//   let current = list.head;
+function reverseList(list){
+  let current = list.head;
   
-//   while(current){
-//     list.remove(current.value);
-//     list.insertFirst(current.value);
-//     current = current.next;
-//   }
+  while(current){
+    list.remove(current.value);
+    list.insertFirst(current.value);
+    current = current.next;
+  }
 
-//   return JSON.stringify(list, null, 2);
-// }
-// console.log(JSON.stringify(list, null, 2));
+  return JSON.stringify(list, null, 2);
+}
+console.log(JSON.stringify(list, null, 2));
 // console.log(reverseList(list));
-
 
 // function reverseListRecursive(list){
 //   let current = list.head;
@@ -67,3 +66,27 @@ function WhatDoesThisProgramDo(lst){
 // }
 
 // console.log(reverseListRecursive(list));
+
+// Third from the end
+// Write an algorithm to find the third element from the end of a linked list. 
+// Note You may be tempted to add a length property to your Linked List class. 
+// The length property is not a typical property of linked list, 
+// therefore don't make any modification to the Linked list class that is provided to you.
+
+function thirdFromTheEnd(list){
+  let counter = 0;
+  let currentNode = list.head;
+
+  while (currentNode) {
+    counter++;
+    currentNode = currentNode.next;
+  }
+
+  currentNode = list.head;
+  for (let i=0; i !== counter-3; i ++){
+    currentNode = currentNode.next;
+  }
+  return currentNode;
+}
+
+//console.log(thirdFromTheEnd(list));
